@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h2>Student Management System</h2>
+    </div>
+
+    <ul>
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-users"></i> Students</a></li>
+        <li><a href="#"><i class="fa-solid fa-chart-column"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa-solid fa-circle-info"></i> About</a></li>
+    </ul>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <h1>🎓 Student Management System</h1>
+
+    <p>
+        Manage Student Records Easily with Node.js, Express & PostgreSQL
+    </p>
+
+</header>
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard">
+
+    <div class="card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2 id="totalStudents">0</h2>
+
+        <p>Total Students</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-building-columns"></i>
+
+        <h2 id="departmentCount">0</h2>
+
+        <p>Departments</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-school"></i>
+
+        <h2 id="collegeCount">0</h2>
+
+        <p>Colleges</p>
+
+    </div>
+
+    <div class="card">
+
+        <i class="fa-solid fa-database"></i>
+
+        <h2>Online</h2>
+
+        <p>Database</p>
+
+    </div>
+
+</section>
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+    <!-- ADD STUDENT -->
+
+    <div class="box">
+
+        <h2>
+            <i class="fa-solid fa-user-plus"></i>
+            Add Student
+        </h2>
+
+        <div class="form-grid">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Student Name">
+
+            <input
+                type="number"
+                id="age"
+                placeholder="Age">
+
+            <input
+                type="text"
+                id="department"
+                placeholder="Department">
+
+            <input
+                type="text"
+                id="college"
+                placeholder="College">
+
+        </div>
+
+        <div class="btn-group">
+
+            <button class="add-btn" onclick="addStudent()">
+                <i class="fa-solid fa-plus"></i>
+                Add Student
+            </button>
+
+            <button class="refresh-btn" onclick="loadStudents()">
+                <i class="fa-solid fa-rotate"></i>
+                Refresh
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="box">
+
+        <h2>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search Student
+        </h2>
+
+        <div class="search-box">
+
+            <input
+                type="number"
+                id="searchId"
+                placeholder="Enter Student ID">
+
+            <button class="search-btn" onclick="searchStudent()">
+                <i class="fa-solid fa-search"></i>
+                Search
+            </button>
+
+            <button class="show-btn" onclick="loadStudents()">
+                <i class="fa-solid fa-list"></i>
+                Show All
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Age</th>
+
+                    <th>Department</th>
+
+                    <th>College</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="studentTable">
+
+                <tr>
+
+                    <td colspan="6">
+
+                        No Students Available
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- ================= EDIT MODAL ================= -->
+
+<div class="modal" id="editModal">
+
+    <div class="modal-content">
+
+        <h2>Edit Student</h2>
+
+        <input
+            type="hidden"
+            id="editId">
+
+        <input
+            type="text"
+            id="editName"
+            placeholder="Student Name">
+
+        <input
+            type="number"
+            id="editAge"
+            placeholder="Age">
+
+        <input
+            type="text"
+            id="editDepartment"
+            placeholder="Department">
+
+        <input
+            type="text"
+            id="editCollege"
+            placeholder="College">
+
+        <div class="modal-buttons">
+
+            <button onclick="updateStudent()">
+
+                Save
+
+            </button>
+
+            <button onclick="closeModal()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast" class="toast">
+
+    Success
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Student Management System
+
+    </p>
+
+    <p>
+
+        HTML | CSS | JavaScript | Node.js | Express | PostgreSQL
+
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

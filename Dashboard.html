@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>🎓 SMS</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="students.html">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    Students
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-building-columns"></i>
+                    Departments
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <!-- Navbar -->
+
+        <div class="navbar">
+
+            <h1>Dashboard</h1>
+
+            <div class="profile">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <img src="https://i.pravatar.cc/45" alt="Profile">
+
+            </div>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card blue">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <h2 id="totalStudents">0</h2>
+
+                <p>Total Students</p>
+
+            </div>
+
+            <div class="card green">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <h2>8</h2>
+
+                <p>Departments</p>
+
+            </div>
+
+            <div class="card orange">
+
+                <i class="fa-solid fa-school"></i>
+
+                <h2>15</h2>
+
+                <p>Colleges</p>
+
+            </div>
+
+            <div class="card red">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h2>98%</h2>
+
+                <p>Growth</p>
+
+            </div>
+
+        </div>
+
+        <!-- Recent Activity -->
+
+        <div class="activity">
+
+            <h2>Recent Activity</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Department</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentActivity">
+
+                    <tr>
+
+                        <td>Yash</td>
+
+                        <td>EIE</td>
+
+                        <td class="success">Added</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Rahul</td>
+
+                        <td>CSE</td>
+
+                        <td class="update">Updated</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Priya</td>
+
+                        <td>ECE</td>
+
+                        <td class="delete">Deleted</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Quick Buttons -->
+
+        <div class="buttons">
+
+            <a href="students.html" class="btn">
+                Manage Students
+            </a>
+
+            <button class="btn" onclick="refreshDashboard()">
+                Refresh Dashboard
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
